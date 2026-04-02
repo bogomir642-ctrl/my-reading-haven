@@ -1,12 +1,12 @@
-import heroImage from "@/assets/hero-jezersko.jpg";
+import heroImage from "@/assets/hero-reading.jpg";
 
 const Hero = () => {
   return (
     <section className="relative min-h-screen flex items-center justify-center overflow-hidden">
       <img
         src={heroImage}
-        alt="Jezersko dolina v Kamniško-Savinjskih Alpah"
-        className="absolute inset-0 w-full h-full object-cover"
+        alt="Branje knjige"
+        className="absolute inset-0 w-full h-full object-cover blur-sm scale-105"
       />
       <div className="absolute inset-0" style={{ background: "var(--hero-overlay)" }} />
       <div className="relative z-10 text-center px-6 max-w-3xl">
