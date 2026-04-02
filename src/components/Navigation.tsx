@@ -13,9 +13,8 @@ const Navigation = () => {
   return (
     <nav className="fixed top-0 left-0 right-0 z-50 bg-background/80 backdrop-blur-md border-b border-border/50">
       <div className="max-w-5xl mx-auto px-6 py-4 flex items-center justify-between">
-        <a href="#" className="font-heading text-lg text-foreground">APG</a>
+        <a href="#" className="font-heading text-lg text-foreground">Center Connect</a>
 
-        {/* Desktop */}
         <div className="hidden md:flex gap-8">
           {links.map((l) => (
             <a key={l.href} href={l.href} className="font-body text-sm text-muted-foreground hover:text-foreground transition-colors">
@@ -24,7 +23,6 @@ const Navigation = () => {
           ))}
         </div>
 
-        {/* Mobile toggle */}
         <button
           className="md:hidden text-foreground"
           onClick={() => setMenuOpen(!menuOpen)}
@@ -40,7 +38,6 @@ const Navigation = () => {
         </button>
       </div>
 
-      {/* Mobile menu */}
       {menuOpen && (
         <div className="md:hidden bg-background border-b border-border px-6 pb-4 space-y-3">
           {links.map((l) => (

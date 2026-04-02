@@ -17,7 +17,7 @@ const Footer = () => {
             </svg>
           </a>
           <a
-            href="https://www.facebook.com/"
+            href="https://www.facebook.com/share/16vJVkBbap/"
             target="_blank"
             rel="noopener noreferrer"
             className="text-muted-foreground hover:text-foreground transition-colors"
@@ -28,7 +28,7 @@ const Footer = () => {
             </svg>
           </a>
           <a
-            href="mailto:alenka@example.com"
+            href="mailto:a.p.gantar@gmail.com"
             className="text-muted-foreground hover:text-foreground transition-colors"
             aria-label="E-pošta"
           >
@@ -37,10 +37,6 @@ const Footer = () => {
             </svg>
           </a>
         </div>
-
-        <p className="text-xs text-muted-foreground">
-          © {new Date().getFullYear()}
-        </p>
       </div>
     </footer>
   );

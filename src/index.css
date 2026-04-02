@@ -6,37 +6,39 @@
 
 @layer base {
   :root {
-    --background: 40 33% 96%;
-    --foreground: 30 10% 22%;
+    --background: 340 30% 97%;
+    --foreground: 340 10% 20%;
 
-    --card: 40 30% 93%;
-    --card-foreground: 30 10% 22%;
+    --card: 340 25% 93%;
+    --card-foreground: 340 10% 20%;
 
-    --popover: 40 33% 96%;
-    --popover-foreground: 30 10% 22%;
+    --popover: 340 30% 97%;
+    --popover-foreground: 340 10% 20%;
 
-    --primary: 28 40% 38%;
-    --primary-foreground: 40 33% 96%;
+    --primary: 340 25% 45%;
+    --primary-foreground: 340 30% 97%;
 
-    --secondary: 35 25% 88%;
-    --secondary-foreground: 30 10% 22%;
+    --secondary: 340 18% 90%;
+    --secondary-foreground: 340 10% 20%;
 
-    --muted: 35 20% 90%;
-    --muted-foreground: 30 8% 50%;
+    --muted: 340 15% 92%;
+    --muted-foreground: 340 8% 48%;
 
-    --accent: 150 20% 40%;
-    --accent-foreground: 40 33% 96%;
+    --accent: 340 20% 50%;
+    --accent-foreground: 340 30% 97%;
 
     --destructive: 0 84.2% 60.2%;
     --destructive-foreground: 210 40% 98%;
 
-    --border: 35 20% 85%;
-    --input: 35 20% 85%;
-    --ring: 28 40% 38%;
+    --border: 340 15% 87%;
+    --input: 340 15% 87%;
+    --ring: 340 25% 45%;
 
     --radius: 0.5rem;
 
-    --hero-overlay: linear-gradient(180deg, hsla(30, 10%, 22%, 0.3) 0%, hsla(30, 10%, 22%, 0.6) 100%);
+    --hero-overlay: linear-gradient(180deg, hsla(340, 10%, 20%, 0.3) 0%, hsla(340, 10%, 20%, 0.6) 100%);
+
+    --event-bg: 340 20% 88%;
 
     --font-heading: 'Cormorant Garamond', serif;
     --font-body: 'Inter', sans-serif;

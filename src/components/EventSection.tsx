@@ -1,17 +1,11 @@
 import { useState } from "react";
-import {
-  Dialog,
-  DialogContent,
-  DialogHeader,
-  DialogTitle,
-  DialogTrigger,
-} from "@/components/ui/dialog";
+import jezerskoImage from "@/assets/jezersko-senkova.jpg";
 
 const EventSection = () => {
-  const [open, setOpen] = useState(false);
+  const [expanded, setExpanded] = useState(false);
 
   return (
-    <section id="dogodek" className="section-padding bg-card">
+    <section id="dogodek" className="section-padding" style={{ backgroundColor: "hsl(var(--event-bg))" }}>
       <div className="max-w-3xl mx-auto">
         <h2 className="font-heading text-4xl md:text-5xl font-medium text-foreground mb-4 text-center">
           Bralni vikend odklop
@@ -20,19 +14,23 @@ const EventSection = () => {
           15.–17. maj 2026 · Šenkova domačija, Jezersko
         </p>
 
+        {/* Komu je namenjen - always visible */}
         <div className="space-y-5 text-muted-foreground font-body text-base leading-relaxed font-light mb-10">
-          <p>
-            Bralni vikend odklop je namenjen vsem, ki radi berete, in vsem, ki bi si to želeli, a vam primanjkuje časa, umirjenosti ali idej. Vsem, ki preprosto potrebujete odklop od hitečega vsakdanjika in zaslonov.
-          </p>
-          <p>
-            Obljubljam vam sprejemajoče vzdušje, v katerem se pogovor o knjigah (in pravzaprav o življenju) zgodi spontano in brez pritiska. Knjig iz programa vam ni treba prebrati vnaprej in lahko se nam pridružite brez pričakovanj.
-          </p>
+          <h3 className="font-heading text-xl text-foreground mb-3">Komu je namenjen?</h3>
+          <ul className="space-y-2 list-none">
+            <li>Vsem, ki radi berete, in vsem, ki bi si to želeli, a vam primanjkuje časa, umirjenosti ali idej.</li>
+            <li>Vsem, ki preprosto potrebujete odklop od hitečega vsakdanjika in zaslonov.</li>
+            <li>Vsem, ki ste radovedni in odprti za nova obzorja, ne glede na to, ali ste v zadnjem letu prebrali kakšno knjigo.</li>
+            <li>Vsem, ki se prijavljate sami in malo oklevate – ne skrbite, hitro boste navezali stike in postali del našega plemena navdušencev nad branjem.</li>
+          </ul>
+          <p>Knjig iz programa vam ni treba prebrati vnaprej in lahko se nam pridružite brez pričakovanj. Prisrčno dobrodošli vsi!</p>
+
           <p className="text-foreground font-normal">
             Cena: 390,00 EUR · Število mest je omejeno.
           </p>
         </div>
 
-        <div className="flex flex-col sm:flex-row gap-4 justify-center">
+        <div className="flex flex-col sm:flex-row gap-4 justify-center mb-10">
           <a
             href="https://docs.google.com/forms/"
             target="_blank"
@@ -42,40 +40,22 @@ const EventSection = () => {
             Prijava
           </a>
 
-          <Dialog open={open} onOpenChange={setOpen}>
-            <DialogTrigger asChild>
-              <button className="inline-block border border-primary text-primary px-8 py-3 rounded-sm font-body text-sm tracking-widest uppercase hover:bg-primary/5 transition-colors">
-                Preberi več
-              </button>
-            </DialogTrigger>
-            <DialogContent className="max-w-2xl max-h-[85vh] overflow-y-auto bg-background">
-              <DialogHeader>
-                <DialogTitle className="font-heading text-3xl font-medium text-foreground">
-                  Bralni vikend odklop
-                </DialogTitle>
-              </DialogHeader>
-              <EventDetails />
-            </DialogContent>
-          </Dialog>
+          <button
+            onClick={() => setExpanded(!expanded)}
+            className="inline-block border border-primary text-primary px-8 py-3 rounded-sm font-body text-sm tracking-widest uppercase hover:bg-primary/5 transition-colors"
+          >
+            {expanded ? "Skrij podrobnosti" : "Preberi več"}
+          </button>
         </div>
+
+        {expanded && <EventDetails />}
       </div>
     </section>
   );
 };
 
 const EventDetails = () => (
-  <div className="space-y-6 text-muted-foreground font-body text-sm leading-relaxed font-light pt-2">
-    <div>
-      <h3 className="font-heading text-xl text-foreground mb-3">Komu je namenjen?</h3>
-      <ul className="space-y-2 list-none">
-        <li>Vsem, ki radi berete, in vsem, ki bi si to želeli, a vam primanjkuje časa, umirjenosti ali idej.</li>
-        <li>Vsem, ki preprosto potrebujete odklop od hitečega vsakdanjika in zaslonov.</li>
-        <li>Vsem, ki ste radovedni in odprti za nova obzorja, ne glede na to, ali ste v zadnjem letu prebrali kakšno knjigo.</li>
-        <li>Vsem, ki se prijavljate sami in malo oklevate – ne skrbite, hitro boste navezali stike in postali del našega plemena navdušencev nad branjem.</li>
-      </ul>
-      <p className="mt-3">Knjig iz programa vam ni treba prebrati vnaprej in lahko se nam pridružite brez pričakovanj. Prisrčno dobrodošli vsi!</p>
-    </div>
-
+  <div className="space-y-6 text-muted-foreground font-body text-sm leading-relaxed font-light pt-2 animate-fade-in">
     <div>
       <h3 className="font-heading text-xl text-foreground mb-3">Program</h3>
 
@@ -128,6 +108,12 @@ const EventDetails = () => (
       <h3 className="font-heading text-xl text-foreground mb-3">O kraju</h3>
       <p>Jezersko je neokrnjena gorenjska dolina z reko Kokro, obdana z Grintovci in drugimi gorami v Kamniško-Savinjskih Alpah. Njena tišina in narava vas bosta očarali in napolnili z energijo.</p>
       <p className="mt-2">Šenkova domačija je kmetija z več kot 500-letno zgodovino. Danes jo s sodobnim konceptom in vizijo vodi družina Karničar, ki z ljubeznijo do narave, dediščine in s prisrčnim gostoljubjem sprejema goste ter z njimi deli zgodbe svojih prednikov.</p>
+      <img
+        src={jezerskoImage}
+        alt="Šenkova domačija na Jezerskem s pogledom na Kamniško-Savinjske Alpe"
+        className="w-full rounded-sm mt-4"
+        loading="lazy"
+      />
     </div>
 
     <div>
