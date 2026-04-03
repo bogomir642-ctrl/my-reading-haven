@@ -30,25 +30,46 @@ const EventSection = () => {
           </p>
         </div>
 
-        <div className="flex flex-col sm:flex-row gap-4 justify-center mb-10">
-          <a
-            href="https://docs.google.com/forms/"
-            target="_blank"
-            rel="noopener noreferrer"
-            className="inline-block bg-primary text-primary-foreground px-8 py-3 rounded-sm font-body text-sm tracking-widest uppercase text-center hover:opacity-90 transition-opacity"
-          >
-            Prijava
-          </a>
+        {!expanded && (
+          <div className="flex flex-col sm:flex-row gap-4 justify-center mb-10">
+            <a
+              href="https://docs.google.com/forms/"
+              target="_blank"
+              rel="noopener noreferrer"
+              className="inline-block bg-primary text-primary-foreground px-8 py-3 rounded-sm font-body text-sm tracking-widest uppercase text-center hover:opacity-90 transition-opacity"
+            >
+              Prijava
+            </a>
+            <button
+              onClick={() => setExpanded(true)}
+              className="inline-block border border-primary text-primary px-8 py-3 rounded-sm font-body text-sm tracking-widest uppercase hover:bg-primary/5 transition-colors"
+            >
+              Preberi več
+            </button>
+          </div>
+        )}
 
-          <button
-            onClick={() => setExpanded(!expanded)}
-            className="inline-block border border-primary text-primary px-8 py-3 rounded-sm font-body text-sm tracking-widest uppercase hover:bg-primary/5 transition-colors"
-          >
-            {expanded ? "Skrij podrobnosti" : "Preberi več"}
-          </button>
-        </div>
-
-        {expanded && <EventDetails />}
+        {expanded && (
+          <>
+            <EventDetails />
+            <div className="flex flex-col sm:flex-row gap-4 justify-center mt-10">
+              <a
+                href="https://docs.google.com/forms/"
+                target="_blank"
+                rel="noopener noreferrer"
+                className="inline-block bg-primary text-primary-foreground px-8 py-3 rounded-sm font-body text-sm tracking-widest uppercase text-center hover:opacity-90 transition-opacity"
+              >
+                Prijava
+              </a>
+              <button
+                onClick={() => setExpanded(false)}
+                className="inline-block border border-primary text-primary px-8 py-3 rounded-sm font-body text-sm tracking-widest uppercase hover:bg-primary/5 transition-colors"
+              >
+                Skrij podrobnosti
+              </button>
+            </div>
+          </>
+        )}
       </div>
     </section>
   );

@@ -17,7 +17,7 @@ const Hero = () => {
           Povezovanje ljudi in navduševanje za branje
         </p>
         <a
-          href="#o-meni"
+          href="#dogodek"
           className="inline-block border border-primary-foreground/60 text-primary-foreground px-8 py-3 rounded-sm font-body text-sm tracking-widest uppercase hover:bg-primary-foreground/10 transition-colors"
         >
           Več o meni
