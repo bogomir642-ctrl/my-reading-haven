@@ -25,9 +25,6 @@ const EventSection = () => {
           </ul>
           <p>Knjig iz programa vam ni treba prebrati vnaprej in lahko se nam pridružite brez pričakovanj. Prisrčno dobrodošli vsi!</p>
 
-          <p className="text-foreground font-normal">
-            Cena: 390,00 EUR · Število mest je omejeno.
-          </p>
         </div>
 
         {!expanded && (

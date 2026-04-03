@@ -2,7 +2,7 @@ import bralniKlubImage from "@/assets/bralni-klub-dri.jpg";
 
 const ArticleSection = () => {
   return (
-    <section id="clanek" className="section-padding bg-card">
+    <section id="clanek" className="section-padding">
       <div className="max-w-4xl mx-auto">
         <h2 className="font-heading text-4xl md:text-5xl font-medium text-foreground mb-10 text-center">
           V medijih
