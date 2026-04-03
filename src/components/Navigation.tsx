@@ -4,8 +4,8 @@ const Navigation = () => {
   const [menuOpen, setMenuOpen] = useState(false);
 
   const links = [
-    { href: "#o-meni", label: "O meni" },
     { href: "#dogodek", label: "Dogodek" },
+    { href: "#o-meni", label: "O meni" },
     { href: "#pesem-na-teden", label: "Pesem na teden" },
     { href: "#clanek", label: "V medijih" },
   ];
