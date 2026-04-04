@@ -8,7 +8,7 @@ const ArticleSection = () => {
           V medijih
         </h2>
         <div className="flex flex-col md:flex-row gap-10 items-center">
-          <div className="md:w-1/2 space-y-6">
+          <div className="md:w-1/2 space-y-6 text-center md:text-left">
             <p className="text-muted-foreground font-body text-base leading-relaxed font-light">
               Članek o bralnem klubu v podjetju DRI, objavljen v reviji Bukla.
             </p>
