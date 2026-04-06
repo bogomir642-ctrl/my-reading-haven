@@ -2,8 +2,12 @@ const Footer = () => {
   return (
     <footer className="px-6 py-12 md:px-12 border-t border-border bg-card">
       <div className="max-w-3xl mx-auto flex flex-col md:flex-row items-center justify-between gap-6">
-        <p className="font-heading text-lg text-foreground">Alenka Polajnar Gantar</p>
-
+        <div className="flex flex-col items-center md:items-start gap-2">
+          <p className="font-heading text-foreground text-xl">Alenka Polajnar Gantar</p>
+          <a href="/splosni-pogoji" className="text-sm text-muted-foreground hover:text-foreground transition-colors underline">
+            Splošni pogoji bralnega vikend odklopa
+          </a>
+        </div>
         <div className="flex items-center gap-6">
           <a
             href="https://www.linkedin.com/in/alenka-polajnar-gantar/"
