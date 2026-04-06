@@ -19,17 +19,10 @@ const EventSection = () => {
   return (
     <section id="dogodek" className="section-padding" style={{ backgroundColor: "hsl(var(--event-bg))" }}>
       <div className="max-w-5xl mx-auto">
-        <h2 className="font-heading text-4xl md:text-5xl font-medium text-foreground mb-4 text-center">
-          Bralni vikend odklop
-        </h2>
-        <p className="text-center text-muted-foreground font-body mb-12 text-lg">
-          15.–17. maj 2026 · Šenkova domačija, Jezersko
-        </p>
-
         {/* Komu je namenjen - image RIGHT */}
         <div className="flex flex-col md:flex-row gap-8 items-start mb-10">
           <div className="flex-1 space-y-5 text-muted-foreground font-body text-base leading-relaxed font-light">
-            <h3 className="font-heading text-xl text-foreground mb-3">Komu je namenjen?</h3>
+            <h3 className="font-heading text-3xl text-foreground mb-3">Komu je namenjen?</h3>
             <ul className="space-y-2 list-none">
               <li>Vsem, ki radi berete, in vsem, ki bi si to želeli, a vam primanjkuje časa, umirjenosti ali idej.</li>
               <li>Vsem, ki preprosto potrebujete odklop od hitečega vsakdanjika in zaslonov.</li>
@@ -107,7 +100,7 @@ const EventDetails = () => (
         />
       </div>
       <div className="flex-1">
-        <h3 className="font-heading text-xl text-foreground mb-3">Program</h3>
+        <h3 className="font-heading text-3xl text-foreground mb-3">Program</h3>
 
         <h4 className="font-medium text-foreground mt-4 mb-2">Petek, 15. maja</h4>
         <ul className="space-y-1">
@@ -140,7 +133,7 @@ const EventDetails = () => (
     {/* Cena paketa vključuje - image RIGHT */}
     <div className="flex flex-col md:flex-row gap-8 items-start">
       <div className="flex-1">
-        <h3 className="font-heading text-xl text-foreground mb-3">Cena paketa vključuje</h3>
+        <h3 className="font-heading text-3xl text-foreground mb-3">Cena paketa vključuje</h3>
         <ul className="space-y-1 list-disc list-inside">
           <li>Dva bralna večera s pogovorom</li>
           <li>Bivanje v dvoposteljni sobi na Šenkovi domačiji</li>
@@ -168,7 +161,7 @@ const EventDetails = () => (
 
     {/* O kraju - full width image */}
     <div>
-      <h3 className="font-heading text-xl text-foreground mb-3">O kraju</h3>
+      <h3 className="font-heading text-3xl text-foreground mb-3">O kraju</h3>
       <p>Jezersko je neokrnjena gorenjska dolina z reko Kokro, obdana z Grintovci in drugimi gorami v Kamniško-Savinjskih Alpah. Njena tišina in narava vas bosta očarali in napolnili z energijo.</p>
       <p className="mt-2">Šenkova domačija je kmetija z več kot 500-letno zgodovino. Danes jo s sodobnim konceptom in vizijo vodi družina Karničar, ki z ljubeznijo do narave, dediščine in s prisrčnim gostoljubjem sprejema goste ter z njimi deli zgodbe svojih prednikov.</p>
       <img
