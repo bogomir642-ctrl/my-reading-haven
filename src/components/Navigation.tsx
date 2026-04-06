@@ -1,4 +1,5 @@
 import { useState } from "react";
+import { Link } from "react-router-dom";
 
 const Navigation = () => {
   const [menuOpen, setMenuOpen] = useState(false);
@@ -13,7 +14,7 @@ const Navigation = () => {
   return (
     <nav className="fixed top-0 left-0 right-0 z-50 bg-background/80 backdrop-blur-md border-b border-border/50">
       <div className="max-w-5xl mx-auto px-6 py-4 flex items-center justify-between">
-        <a href="/" className="font-heading text-foreground text-xl">Center Connect</a>
+        <Link to="/" className="font-heading text-foreground text-xl">Center Connect</Link>
 
         <div className="hidden md:flex gap-8">
           {links.map((l) => (
