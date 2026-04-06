@@ -1,6 +1,6 @@
 const PoemSection = () => {
   return (
-    <section id="pesem-na-teden" className="section-padding bg-card">
+    <section id="pesem-na-teden" className="section-padding">
       <div className="max-w-3xl mx-auto">
         <h2 className="font-heading text-4xl md:text-5xl font-medium text-foreground mb-10 text-center">
           Pesem na teden

@@ -2,7 +2,7 @@ import alenkaImage from "@/assets/alenka-portrait.jpg";
 
 const AboutSection = () => {
   return (
-    <section id="o-meni" className="section-padding max-w-4xl mx-auto">
+    <section id="o-meni" className="section-padding bg-card">
       <h2 className="font-heading text-4xl md:text-5xl font-medium text-foreground mb-10 text-center">
         O meni
       </h2>

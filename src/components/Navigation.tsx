@@ -5,8 +5,8 @@ const Navigation = () => {
 
   const links = [
     { href: "#dogodek", label: "Dogodek" },
-    { href: "#o-meni", label: "O meni" },
     { href: "#pesem-na-teden", label: "Pesem na teden" },
+    { href: "#o-meni", label: "O meni" },
     { href: "#clanek", label: "V medijih" },
   ];
 
