@@ -72,7 +72,7 @@ const PoemSection = () => {
         <h2 className="font-heading text-4xl md:text-5xl font-medium text-foreground mb-4 text-center">
           Pesem na teden
         </h2>
-        <p className="text-center text-muted-foreground font-body text-sm mb-12">
+        <p className="text-center text-foreground font-body text-base mb-12">
           Vsak teden prejemnikom pošljem pesem po svoji izbiri. Brez razlage, brez literarnega teoretiziranja.
         </p>
 
@@ -124,7 +124,7 @@ const PoemSection = () => {
 
             {/* Author Attribution */}
             <div className="border-t border-border pt-6">
-              <p className="text-right text-muted-foreground font-body text-sm">
+              <p className="text-right text-foreground font-body text-base">
                 <span className="font-medium text-foreground">{currentPoem.author}</span>
                 {currentPoem.translator && (
                   <>
@@ -138,7 +138,7 @@ const PoemSection = () => {
         </div>
 
         {/* Call to Action */}
-        <div className="space-y-5 text-muted-foreground font-body text-base leading-relaxed font-light text-center border-t border-border pt-10">
+        <div className="space-y-5 text-foreground font-body text-base leading-relaxed font-light text-center border-t border-border pt-10">
           <p className="text-foreground font-normal mt-8">
             Če želiš prejemati pesem na teden, mi piši na Viber:
           </p>

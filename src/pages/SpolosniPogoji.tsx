@@ -6,7 +6,7 @@ const SpolosniPogoji = () => {
     <>
       <Navigation />
       <main className="pt-24 pb-16 section-padding">
-        <div className="max-w-3xl mx-auto text-muted-foreground font-body text-base leading-relaxed font-light">
+        <div className="max-w-3xl mx-auto text-foreground font-body text-base leading-relaxed font-light">
           <h1 className="font-heading text-4xl md:text-5xl font-medium text-foreground mb-12 text-center">
             Splošni pogoji udeležbe
           </h1>

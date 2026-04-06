@@ -14,7 +14,7 @@ const AboutSection = () => {
           className="w-full md:w-1/2 rounded-sm object-cover aspect-[4/5]"
           loading="lazy"
         />
-        <div className="space-y-5 text-muted-foreground font-body text-base leading-relaxed font-light md:w-1/2">
+        <div className="space-y-5 text-foreground font-body text-base leading-relaxed font-light md:w-1/2">
           <p>
             Beseda me spremlja, odkar pomnim. Ni naključje, da sem izbrala študij, prepleten z branjem in komunikacijo – diplomirala sem iz angleškega jezika s književnostjo in novinarstva.
           </p>

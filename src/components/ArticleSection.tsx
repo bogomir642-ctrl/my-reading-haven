@@ -9,14 +9,14 @@ const ArticleSection = () => {
         </h2>
         <div className="flex flex-col md:flex-row gap-10 items-center">
           <div className="md:w-1/2 space-y-6 text-center md:text-left">
-            <p className="text-muted-foreground font-body text-base leading-relaxed font-light">
+            <p className="text-foreground font-body text-base leading-relaxed font-light">
               Članek o bralnem klubu v podjetju DRI, objavljen v reviji Bukla.
             </p>
             <a
               href="https://www.bukla.si/revija-bukla/bralni-klub-v-podjetju-dri-prostor-srecevanja-in-osebne-rasti.html"
               target="_blank"
               rel="noopener noreferrer"
-              className="inline-block border border-primary text-primary px-8 py-3 rounded-sm font-body text-sm tracking-widest uppercase hover:bg-primary/5 transition-colors"
+              className="inline-block border border-primary text-primary px-8 py-3 rounded-sm font-body text-base tracking-widest uppercase hover:bg-primary/5 transition-colors"
             >
               Preberi članek
             </a>

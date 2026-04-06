@@ -1,4 +1,4 @@
-import { useState, useRef, useEffect } from "react";
+import { useState, useRef } from "react";
 import jezerskoImage from "@/assets/jezersko-senkova.jpg";
 import pogovorImage from "@/assets/pogovor.webp";
 import jogaImage from "@/assets/joga1.jpg";
@@ -8,20 +8,12 @@ const EventSection = () => {
   const [expanded, setExpanded] = useState(false);
   const buttonsRef = useRef<HTMLDivElement>(null);
 
-  useEffect(() => {
-    if (expanded && buttonsRef.current) {
-      setTimeout(() => {
-        buttonsRef.current?.scrollIntoView({ behavior: "smooth", block: "center" });
-      }, 100);
-    }
-  }, [expanded]);
-
   return (
     <section id="dogodek" className="section-padding" style={{ backgroundColor: "hsl(var(--event-bg))" }}>
       <div className="max-w-5xl mx-auto">
         {/* Komu je namenjen - image RIGHT */}
         <div className="flex flex-col md:flex-row gap-8 items-start mb-10">
-          <div className="flex-1 space-y-5 text-muted-foreground font-body text-base leading-relaxed font-light">
+          <div className="flex-1 space-y-5 text-foreground font-body text-base leading-relaxed font-light">
             <h3 className="font-heading text-3xl text-foreground mb-3">Komu je namenjen?</h3>
             <ul className="space-y-2 list-none">
               <li>Vsem, ki radi berete, in vsem, ki bi si to želeli, a vam primanjkuje časa, umirjenosti ali idej.</li>
@@ -47,13 +39,13 @@ const EventSection = () => {
               href="https://docs.google.com/forms/"
               target="_blank"
               rel="noopener noreferrer"
-              className="inline-block bg-primary text-primary-foreground px-8 py-3 rounded-sm font-body text-sm tracking-widest uppercase text-center hover:opacity-90 transition-opacity"
+              className="inline-block bg-primary text-primary-foreground px-8 py-3 rounded-sm font-body text-base tracking-widest uppercase text-center hover:opacity-90 transition-opacity"
             >
               Prijava
             </a>
             <button
               onClick={() => setExpanded(true)}
-              className="inline-block border border-primary text-primary px-8 py-3 rounded-sm font-body text-sm tracking-widest uppercase hover:bg-primary/5 transition-colors"
+              className="inline-block border border-primary text-primary px-8 py-3 rounded-sm font-body text-base tracking-widest uppercase hover:bg-primary/5 transition-colors"
             >
               Preberi več
             </button>
@@ -68,13 +60,13 @@ const EventSection = () => {
                 href="https://docs.google.com/forms/"
                 target="_blank"
                 rel="noopener noreferrer"
-                className="inline-block bg-primary text-primary-foreground px-8 py-3 rounded-sm font-body text-sm tracking-widest uppercase text-center hover:opacity-90 transition-opacity"
+                className="inline-block bg-primary text-primary-foreground px-8 py-3 rounded-sm font-body text-base tracking-widest uppercase text-center hover:opacity-90 transition-opacity"
               >
                 Prijava
               </a>
               <button
                 onClick={() => setExpanded(false)}
-                className="inline-block border border-primary text-primary px-8 py-3 rounded-sm font-body text-sm tracking-widest uppercase hover:bg-primary/5 transition-colors"
+                className="inline-block border border-primary text-primary px-8 py-3 rounded-sm font-body text-base tracking-widest uppercase hover:bg-primary/5 transition-colors"
               >
                 Skrij podrobnosti
               </button>
@@ -87,7 +79,7 @@ const EventSection = () => {
 };
 
 const EventDetails = () => (
-  <div className="space-y-10 text-muted-foreground font-body text-sm leading-relaxed font-light pt-2 animate-fade-in">
+  <div className="space-y-10 text-foreground font-body text-base leading-relaxed font-light pt-2 animate-fade-in">
     
     {/* Program - image LEFT */}
     <div className="flex flex-col md:flex-row gap-8 items-start">
@@ -102,14 +94,14 @@ const EventDetails = () => (
       <div className="flex-1">
         <h3 className="font-heading text-3xl text-foreground mb-3">Program</h3>
 
-        <h4 className="font-medium text-foreground mt-4 mb-2">Petek, 15. maja</h4>
+        <h4 className="font-medium text-foreground mt-4 mb-3 text-2xl">Petek, 15. maja</h4>
         <ul className="space-y-1">
           <li>16.00 – Dobrodošlica s kavo in prigrizkom, prevzem knjižnega darilnega paketa</li>
           <li>16.30 – Uvodni bralni pogovor, spoznavanje</li>
           <li>18.00 – Večerja in druženje</li>
         </ul>
 
-        <h4 className="font-medium text-foreground mt-4 mb-2">Sobota, 16. maja</h4>
+        <h4 className="font-medium text-foreground mt-4 mb-3 text-2xl">Sobota, 16. maja</h4>
         <ul className="space-y-1">
           <li>7.00 – Enostavna jutranja joga za lep začetek dneva</li>
           <li>8.00 – Zajtrk brez naglice</li>
@@ -120,7 +112,7 @@ const EventDetails = () => (
           <li>16.30 – Drugi bralni večer – tokrat v družbi z gostom presenečenja</li>
         </ul>
 
-        <h4 className="font-medium text-foreground mt-4 mb-2">Nedelja, 17. maja</h4>
+        <h4 className="font-medium text-foreground mt-4 mb-3 text-2xl">Nedelja, 17. maja</h4>
         <ul className="space-y-1">
           <li>7.00 – Enostavna jutranja joga za lep začetek dneva</li>
           <li>8.00 – Zajtrk brez naglice</li>
