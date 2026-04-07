@@ -5,7 +5,7 @@ const Footer = () => {
     <footer className="px-6 py-12 md:px-12 border-t border-border bg-card">
       <div className="max-w-3xl mx-auto flex flex-col md:flex-row items-center justify-between gap-6">
         <div className="flex flex-col items-center md:items-start gap-2">
-          <p className="font-heading text-foreground text-xl">Alenka Polajnar Gantar</p>
+          <p className="font-heading text-foreground text-xl">Center Connect, Alenka Polajnar Gantar, s. p.</p>
           <Link to="/splosni-pogoji" className="text-sm text-muted-foreground hover:text-foreground transition-colors underline">
             Splošni pogoji bralnega vikend odklopa
           </Link>

@@ -1,25 +1,41 @@
-import { useState } from "react";
-import { Link, useLocation } from "react-router-dom";
+import { useState, useEffect } from "react";
+import { Link, useLocation, useNavigate } from "react-router-dom";
 
 const Navigation = () => {
   const [menuOpen, setMenuOpen] = useState(false);
   const location = useLocation();
+  const navigate = useNavigate();
   const isHome = location.pathname === "/";
 
   const links = [
-    { href: "#dogodek", label: "Dogodek" },
+    { href: "#dogodek", label: "Bralni vikend odklop" },
     { href: "#pesem-na-teden", label: "Pesem na teden" },
-    { href: "#o-meni", label: "O meni" },
-    { href: "#clanek", label: "V medijih" },
+    { href: "#o-meni", label: "Program vodim" },
+    { href: "#clanek", label: "Objave" },
   ];
+
+  // After navigating to home with a scrollTo state, scroll to the target section
+  useEffect(() => {
+    if (isHome && location.state?.scrollTo) {
+      const target = location.state.scrollTo;
+      const tryScroll = () => {
+        const element = document.querySelector(target);
+        if (element) {
+          element.scrollIntoView({ behavior: "smooth" });
+        }
+      };
+      // Small delay to ensure the page has rendered
+      const t = setTimeout(tryScroll, 100);
+      return () => clearTimeout(t);
+    }
+  }, [isHome, location.state]);
 
   const handleNavClick = (href: string) => {
     if (isHome) {
-      // On home page, scroll to section
       const element = document.querySelector(href);
       element?.scrollIntoView({ behavior: "smooth" });
     } else {
-      // On subpage, close menu and let Link handle it
+      navigate("/", { state: { scrollTo: href } });
       setMenuOpen(false);
     }
   };
@@ -44,13 +60,13 @@ const Navigation = () => {
                 {l.label}
               </a>
             ) : (
-              <Link 
+              <button
                 key={l.href}
-                to="/" 
+                onClick={() => handleNavClick(l.href)}
                 className="font-body text-sm text-muted-foreground hover:text-foreground transition-colors"
               >
                 {l.label}
-              </Link>
+              </button>
             )
           )}
         </div>
@@ -87,14 +103,13 @@ const Navigation = () => {
                 {l.label}
               </a>
             ) : (
-              <Link
+              <button
                 key={l.href}
-                to="/"
-                onClick={() => setMenuOpen(false)}
+                onClick={() => handleNavClick(l.href)}
                 className="block font-body text-sm text-muted-foreground hover:text-foreground transition-colors"
               >
                 {l.label}
-              </Link>
+              </button>
             )
           )}
         </div>

@@ -38,7 +38,7 @@ const EventSection = () => {
         {!expanded && (
           <div className="flex flex-col sm:flex-row gap-4 justify-center mb-10">
             <a
-              href="https://docs.google.com/forms/"
+              href="https://docs.google.com/forms/d/e/1FAIpQLSeZ4rGXmYz9fBSoYdGOfQ2rXoxHa_n0roG_hT7Sh6YoMg5NKA/viewform?usp=publish-editor"
               target="_blank"
               rel="noopener noreferrer"
               className="inline-block bg-primary text-primary-foreground px-8 py-3 rounded-sm font-body text-base tracking-widest uppercase text-center hover:opacity-90 transition-opacity"
@@ -59,7 +59,7 @@ const EventSection = () => {
             <EventDetails />
             <div ref={buttonsRef} className="flex flex-col sm:flex-row gap-4 justify-center mt-10">
               <a
-                href="https://docs.google.com/forms/"
+                href="https://docs.google.com/forms/d/e/1FAIpQLSeZ4rGXmYz9fBSoYdGOfQ2rXoxHa_n0roG_hT7Sh6YoMg5NKA/viewform?usp=publish-editor"
                 target="_blank"
                 rel="noopener noreferrer"
                 className="inline-block bg-primary text-primary-foreground px-8 py-3 rounded-sm font-body text-base tracking-widest uppercase text-center hover:opacity-90 transition-opacity"
@@ -130,15 +130,18 @@ const EventDetails = () => (
       </div>
     </div>
 
+    {/* Note between Program and Cena */}
+    <p className="font-body text-base text-foreground italic">Knjige, o katerih bomo govorili, in ime gosta na bralnem večeru vam sporočim po prijavi.</p>
+
     {/* Cena paketa vključuje - image RIGHT */}
     <div className="flex flex-col md:flex-row gap-8 items-start">
       <div className="flex-1">
-        <h3 className="font-heading text-3xl text-foreground mb-3 font-bold">Cena: <span className="font-body font-extrabold">395,00 EUR</span> vključuje</h3>
+        <h3 className="font-heading text-3xl text-foreground mb-3 font-bold">Cena <span className="font-body font-extrabold text-2xl">395,00 EUR</span> vključuje:</h3>
         <ul className="space-y-1 list-disc list-inside">
-          <li>Dva bralna večera s pogovorom</li>
-          <li>Bivanje v dvoposteljni sobi na Šenkovi domačiji</li>
+          <li>Dva vodena bralna večera s pogovorom</li>
+          <li>Nočitvi v dvoposteljni sobi na Šenkovi domačiji</li>
           <li>2× samopostrežni zajtrk</li>
-          <li>2× večerjo s štirimi hodi – domača in sezonska kuhinja</li>
+          <li>2× večerjo s štirimi hodi – domača in sezonska kuhinja naših babic (tudi vegetarijanski meni)</li>
           <li>Jutranjo jogo</li>
           <li>Uporabo savne (finske in infrardeče)</li>
           <li>Prostor za počitek in branje</li>
@@ -175,6 +178,7 @@ const EventDetails = () => (
     {/* Prijava in plačilo */}
     <div>
       <h3 className="font-heading text-3xl text-foreground mb-3 font-bold">Prijava in plačilo</h3>
+      <p className="text-foreground mb-4">Rok za prijave: <strong>20. 4. 2026</strong></p>
       
       <div className="space-y-6">
         <div>
@@ -186,8 +190,8 @@ const EventDetails = () => (
           <h4 className="font-bold text-lg text-foreground mb-2">B) PLAČILO V DVEH OBROKIH</h4>
           <p>Plačilo poteka na naslednji način:</p>
           <ul className="list-disc list-inside mt-1 space-y-1">
-            <li>prvi obrok ob prijavi</li>
-            <li>drugi obrok do 12. 5. 2026</li>
+            <li>prvi obrok 150,00 EUR ob prijavi</li>
+            <li>drugi obrok 245,00 EUR do 12. 5. 2026</li>
           </ul>
         </div>
         

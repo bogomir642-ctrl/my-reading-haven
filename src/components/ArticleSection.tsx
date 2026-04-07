@@ -5,7 +5,7 @@ const ArticleSection = () => {
     <section id="clanek" className="section-padding">
       <div className="max-w-4xl mx-auto">
         <h2 className="font-heading text-4xl md:text-5xl font-medium text-foreground mb-10 text-center">
-          V medijih
+          Objave
         </h2>
         <div className="flex flex-col md:flex-row gap-10 items-center">
           <div className="md:w-1/2 space-y-6 text-center md:text-left">

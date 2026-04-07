@@ -5,7 +5,7 @@ const AboutSection = () => {
     <section id="o-meni" className="section-padding bg-card">
       <div className="max-w-4xl mx-auto">
       <h2 className="font-heading text-4xl md:text-5xl font-medium text-foreground mb-10 text-center">
-        O meni
+        Program vodim
       </h2>
       <div className="flex flex-col md:flex-row gap-10 items-start">
         <img
@@ -19,13 +19,13 @@ const AboutSection = () => {
             Beseda me spremlja, odkar pomnim. Ni naključje, da sem izbrala študij, prepleten z branjem in komunikacijo – diplomirala sem iz angleškega jezika s književnostjo in novinarstva.
           </p>
           <p>
-            Zadnjih osem let sem vodila projekt spodbujanja branja in bralni klub v podjetju DRI upravljanje investicij, ki je pritegnil več kot petdeset rednih in občasnih sodelujočih sodelavcev. Organizirala sem različne dogodke, povezane s knjigami, in pisala mesečna bralna priporočila.
+            Zadnjih osem let sem vodila projekt spodbujanja branja in bralni klub v podjetju DRI upravljanje investicij, ki je pritegnil več kot petdeset rednih in občasnih članov. Organizirala sem različne dogodke, povezane s knjigami, in pisala mesečna bralna priporočila.
           </p>
           <p>
             Najraje segam po romanih, zasidranih v resničnem življenju, pritegne me vsebina, s katero se lahko poistovetim ali o njej razmišljam. Prebiram tudi stvarno literaturo in poezijo.
           </p>
           <p>
-            Verjamem, da imam dar za povezovanje ljudi in navduševanje za branje.
+            Verjamem, da imam dar za povezovanje ljudi in navduševanje za branje – in prav to želim prenesti na Bralni vikend odklop. <strong> Zelo bom vesela, če se mi pridružite!</strong>
           </p>
         </div>
       </div>

@@ -36,7 +36,6 @@ const SpolosniPogoji = () => {
             <li>uporabo savne,</li>
             <li>večerne družabne trenutke.</li>
           </ul>
-          <p className="mb-3">Podroben urnik bo objavljen pred dogodkom na spletni strani center-connect.si</p>
           <p className="mb-3">Pridržujemo si pravico do vsebinskih ali časovnih prilagoditev programa, če to zahtevajo organizacijske ali nepredvidljive okoliščine.</p>
 
           <h3 className="font-heading text-xl text-foreground mt-8 mb-3">3. Cena programa</h3>
