@@ -133,7 +133,7 @@ const EventDetails = () => (
     {/* Cena paketa vključuje - image RIGHT */}
     <div className="flex flex-col md:flex-row gap-8 items-start">
       <div className="flex-1">
-        <h3 className="font-heading text-3xl text-foreground mb-3 font-bold">Cena paketa vključuje</h3>
+        <h3 className="font-heading text-3xl text-foreground mb-3 font-bold">Cena: <span className="font-body font-extrabold">395,00 EUR</span> vključuje</h3>
         <ul className="space-y-1 list-disc list-inside">
           <li>Dva bralna večera s pogovorom</li>
           <li>Bivanje v dvoposteljni sobi na Šenkovi domačiji</li>
