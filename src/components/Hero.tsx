@@ -3,6 +3,7 @@ import heroImage from "@/assets/hero-reading.jpg";
 
 const Hero = () => {
   const [textIndex, setTextIndex] = useState(0);
+  const [visible, setVisible] = useState(true);
 
   const cyclingTexts = [
     "Predstavljajte si čas, ko odložite telefon – in vzamete v roke knjigo",
@@ -12,8 +13,12 @@ const Hero = () => {
 
   useEffect(() => {
     const interval = setInterval(() => {
-      setTextIndex((prev) => (prev + 1) % cyclingTexts.length);
-    }, 5000); // Change text every 5 seconds
+      setVisible(false);
+      setTimeout(() => {
+        setTextIndex((prev) => (prev + 1) % cyclingTexts.length);
+        setVisible(true);
+      }, 600);
+    }, 5000);
 
     return () => clearInterval(interval);
   }, []);
@@ -45,7 +50,10 @@ const Hero = () => {
           katere obveznosti vas čakajo?
         </p>
         <div className="mt-8 mb-10 min-h-20 flex items-center justify-center">
-          <p className="font-body text-lg md:text-xl text-primary-foreground/90 font-light italic transition-opacity duration-500">
+          <p
+            className="font-body text-lg md:text-xl text-primary-foreground/90 font-light italic transition-all duration-500 ease-in-out"
+            style={{ opacity: visible ? 1 : 0, transform: visible ? "translateY(0)" : "translateY(8px)" }}
+          >
             {cyclingTexts[textIndex]}
           </p>
         </div>
