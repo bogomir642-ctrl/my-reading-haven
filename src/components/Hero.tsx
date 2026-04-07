@@ -3,7 +3,8 @@ import heroImage from "@/assets/hero-reading.jpg";
 
 const Hero = () => {
   const [textIndex, setTextIndex] = useState(0);
-  const [visible, setVisible] = useState(true);
+  const [displayIndex, setDisplayIndex] = useState(0);
+  const [animState, setAnimState] = useState<"idle" | "exit-up" | "enter-from-below">("idle");
 
   const cyclingTexts = [
     "Predstavljajte si čas, ko odložite telefon – in vzamete v roke knjigo",
@@ -13,15 +14,31 @@ const Hero = () => {
 
   useEffect(() => {
     const interval = setInterval(() => {
-      setVisible(false);
+      setAnimState("exit-up");
       setTimeout(() => {
+        setDisplayIndex((prev) => (prev + 1) % cyclingTexts.length);
         setTextIndex((prev) => (prev + 1) % cyclingTexts.length);
-        setVisible(true);
-      }, 600);
+        setAnimState("enter-from-below");
+        requestAnimationFrame(() => {
+          requestAnimationFrame(() => {
+            setAnimState("idle");
+          });
+        });
+      }, 400);
     }, 5000);
 
     return () => clearInterval(interval);
   }, []);
+
+  const isEntering = animState === "enter-from-below";
+  const quoteStyle: React.CSSProperties = {
+    transition: isEntering ? "none" : "opacity 400ms ease, transform 400ms ease",
+    opacity: animState === "idle" ? 1 : 0,
+    transform:
+      animState === "exit-up" ? "translateY(-20px)"
+      : animState === "enter-from-below" ? "translateY(20px)"
+      : "translateY(0)",
+  };
 
   const handleScrollToEvent = (e: React.MouseEvent<HTMLAnchorElement>) => {
     e.preventDefault();
@@ -49,12 +66,12 @@ const Hero = () => {
           <br />
           katere obveznosti vas čakajo?
         </p>
-        <div className="mt-8 mb-10 min-h-20 flex items-center justify-center">
+        <div className="mt-8 mb-10 min-h-20 flex items-center justify-center overflow-hidden">
           <p
-            className="font-body text-lg md:text-xl text-primary-foreground/90 font-light italic transition-all duration-500 ease-in-out"
-            style={{ opacity: visible ? 1 : 0, transform: visible ? "translateY(0)" : "translateY(8px)" }}
+            className="font-body text-lg md:text-xl text-primary-foreground/90 font-light italic"
+            style={quoteStyle}
           >
-            {cyclingTexts[textIndex]}
+            {cyclingTexts[displayIndex]}
           </p>
         </div>
         <a
