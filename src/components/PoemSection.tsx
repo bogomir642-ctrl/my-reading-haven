@@ -64,14 +64,51 @@ const poems: Poem[] = [
 
 const PoemSection = () => {
   const [currentIndex, setCurrentIndex] = useState(0);
-  const currentPoem = poems[currentIndex];
+  const [displayIndex, setDisplayIndex] = useState(0);
+  const [animState, setAnimState] = useState<"idle" | "exit-left" | "exit-right" | "enter-from-right" | "enter-from-left">("idle");
+  const currentPoem = poems[displayIndex];
+
+  const goTo = (next: number, direction: "left" | "right") => {
+    if (animState !== "idle") return;
+    // Step 1: slide current out
+    setAnimState(direction === "right" ? "exit-left" : "exit-right");
+    setTimeout(() => {
+      // Step 2: swap content and position new content off-screen (no transition)
+      setDisplayIndex(next);
+      setCurrentIndex(next);
+      setAnimState(direction === "right" ? "enter-from-right" : "enter-from-left");
+      // Step 3: after browser renders the off-screen position, slide it in
+      requestAnimationFrame(() => {
+        requestAnimationFrame(() => {
+          setAnimState("idle");
+        });
+      });
+    }, 300);
+  };
 
   const nextPoem = () => {
-    setCurrentIndex((prev) => (prev + 1) % poems.length);
+    goTo((currentIndex + 1) % poems.length, "right");
   };
 
   const prevPoem = () => {
-    setCurrentIndex((prev) => (prev - 1 + poems.length) % poems.length);
+    goTo((currentIndex - 1 + poems.length) % poems.length, "left");
+  };
+
+  const goToIndex = (index: number) => {
+    if (index === currentIndex) return;
+    goTo(index, index > currentIndex ? "right" : "left");
+  };
+
+  const isEntering = animState === "enter-from-right" || animState === "enter-from-left";
+  const slideStyle: React.CSSProperties = {
+    transition: isEntering ? "none" : "opacity 300ms ease, transform 300ms ease",
+    opacity: animState === "idle" ? 1 : 0,
+    transform:
+      animState === "exit-left" ? "translateX(-50px)"
+      : animState === "exit-right" ? "translateX(50px)"
+      : animState === "enter-from-right" ? "translateX(50px)"
+      : animState === "enter-from-left" ? "translateX(-50px)"
+      : "translateX(0)",
   };
 
   return (
@@ -100,7 +137,7 @@ const PoemSection = () => {
             {poems.map((_, index) => (
               <button
                 key={index}
-                onClick={() => setCurrentIndex(index)}
+                onClick={() => goToIndex(index)}
                 className={`h-2 rounded-full transition-all ${
                   index === currentIndex ? "bg-primary w-8" : "bg-border w-2 hover:bg-muted-foreground"
                 }`}
@@ -121,8 +158,8 @@ const PoemSection = () => {
         </div>
 
         {/* Poem Card */}
-        <div className="bg-card border border-border rounded-lg p-8 md:p-12 mb-10 shadow-sm">
-          <div className="min-h-96 flex flex-col">
+        <div className="bg-card border border-border rounded-lg p-8 md:p-12 mb-10 shadow-sm overflow-hidden">
+          <div className="min-h-96 flex flex-col" style={slideStyle}>
             {/* Author + Title */}
             <div className="mb-6">
               <p className="font-body text-sm text-foreground/60 mb-1">{currentPoem.author}</p>
