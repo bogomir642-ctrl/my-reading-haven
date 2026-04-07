@@ -1,9 +1,26 @@
+import { useState, useEffect } from "react";
 import heroImage from "@/assets/hero-reading.jpg";
 
 const Hero = () => {
-  const handleScrollToAbout = (e: React.MouseEvent<HTMLAnchorElement>) => {
+  const [textIndex, setTextIndex] = useState(0);
+
+  const cyclingTexts = [
+    "Predstavljajte si čas, ko odložite telefon – in vzamete v roke knjigo",
+    "Predstavljajte si čas za druženje, odkrivanje novih obzorij in poglobljen pogovor",
+    "Predstavljajte si čas, da uživate v naravi, tišini in dobrih zgodbah",
+  ];
+
+  useEffect(() => {
+    const interval = setInterval(() => {
+      setTextIndex((prev) => (prev + 1) % cyclingTexts.length);
+    }, 5000); // Change text every 5 seconds
+
+    return () => clearInterval(interval);
+  }, []);
+
+  const handleScrollToEvent = (e: React.MouseEvent<HTMLAnchorElement>) => {
     e.preventDefault();
-    const element = document.querySelector("#o-meni");
+    const element = document.querySelector("#dogodek");
     element?.scrollIntoView({ behavior: "smooth" });
   };
 
@@ -23,14 +40,21 @@ const Hero = () => {
           15.–17. maja 2026, Jezersko
         </p>
         <p className="font-body text-lg md:text-xl text-primary-foreground/90 font-light mb-10 leading-relaxed">
-          Kdaj ste nazadnje v miru brali, ne da bi razmišljali, katere obveznosti vas čakajo?
+          Kdaj ste nazadnje v miru brali, ne da bi razmišljali,
+          <br />
+          katere obveznosti vas čakajo?
         </p>
+        <div className="mt-8 mb-10 min-h-20 flex items-center justify-center">
+          <p className="font-body text-lg md:text-xl text-primary-foreground/90 font-light italic transition-opacity duration-500">
+            {cyclingTexts[textIndex]}
+          </p>
+        </div>
         <a
-          href="#o-meni"
-          onClick={handleScrollToAbout}
+          href="#dogodek"
+          onClick={handleScrollToEvent}
           className="inline-block border border-primary-foreground/60 text-primary-foreground px-8 py-3 rounded-sm font-body text-sm tracking-widest uppercase hover:bg-primary-foreground/10 transition-colors"
         >
-          Več o meni
+          KOMU JE NAMENJEN
         </a>
       </div>
     </section>
